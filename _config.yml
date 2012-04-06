@@ -1,0 +1,13 @@
+markdown: maraku
+auto: true
+
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+title: Bitmage
+tagline: Philosophy, Programming, Community
+author:
+  name: Brandon Mason
+  email: q@bitmage.net
+  github: bitmage
+  twitter: qbitmage
+
+production_url : http://bitmage.net

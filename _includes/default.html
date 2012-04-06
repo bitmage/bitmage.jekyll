@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+    <link href="/style/bootstrap.css" rel="stylesheet">
+    <link href="/style/main.css" rel="stylesheet">
+    <script type="text/javascript" src="js/paper.js"></script>
+
+    <script type="text/javascript" src="js/fractal.js"></script>
+  </head>
+
+  <body>
+    <div id="header">
+      <div class="page_width">
+        <canvas id="fractal" width="258" height="258"></canvas>
+        <a class="title" href="/">Bitmage - Philosophy, Programming, Society</a>
+      </div>
+      <div id="nav">
+        <ul>
+          <li class="here">
+            <a href="/">Blog</a>
+          </li>
+          <li class="">
+            <a href="/projects">Projects</a>
+          </li>
+          <li class="">
+            <a href="/work">Work</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        {{ content }}
+      </div>
+
+      <footer>
+        <p>&copy; {{ site.author.name }} 2012</p>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
