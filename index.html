@@ -1,4 +1,12 @@
 ---
 layout: default
 ---
-hello world
+<ul class="posts">
+{% for post in site.posts %}
+  <li>
+    <a href="{{ post.url }}">
+      <h4>{{ post.title }}</h4>
+    </a>
+  </li>
+{% endfor %}
+</ul>

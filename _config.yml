@@ -1,4 +1,4 @@
-markdown: maraku
+markdown: maruku
 auto: true
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "Gemfile", "Gemfile.lock"]
