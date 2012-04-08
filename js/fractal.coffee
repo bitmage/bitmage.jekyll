@@ -9,11 +9,13 @@ window.onload = ->
   randomColor = () ->
     "#" + Math.floor(Math.random() * 16777215).toString(16)
 
-  Circ = (x, y, radius, line='black', fill) ->
+  Circ = (x, y, radius, line, fill, width) ->
     circ = new paper.Path.Circle(new paper.Point(x, y), radius)
     circ.radius = radius
     circ.x = x
     circ.y = y
+    circ.strokeColor = line if line?
+    circ.strokeWidth = width if width?
     circ.fillColor = fill if fill?
     return circ
 
@@ -40,7 +42,7 @@ window.onload = ->
 
 
       for coord in coords
-        circ = Circ coord.x, coord.y, radius, null, randomColor()
+        circ = Circ coord.x, coord.y, radius, randomColor(), null, 2
         subgroup.push genFractal(circ, depth - 1) if depth > 1
         inner.push circ
 
@@ -59,7 +61,7 @@ window.onload = ->
 
   start = new Date()
 
-  outer = Circ 128, 128, 127, null, '#AB3612'
+  outer = Circ 128, 128, 127, '#FF6A00', '#0A4500', 2
   inner = genFractal outer, 4
 
   paper.view.onFrame = (event) ->
