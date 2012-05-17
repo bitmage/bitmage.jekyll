@@ -704,3 +704,6 @@ div.flexbox div.box2 {
   -webkit-box-flex: 1;
   box-flex: 1;
 }
+blockquote {
+  padding-left: 40px;
+}

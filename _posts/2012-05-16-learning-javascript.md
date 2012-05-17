@@ -9,11 +9,11 @@ This was an email written to a front end developer looking for some resources on
 
 This is a great place to start learning Javascript:
 
-* [Mozilla Developer Resources](https://developer.mozilla.org/en-US/learn/javascript)
+> [Mozilla Developer Resources](https://developer.mozilla.org/en-US/learn/javascript)
 
 And I think you'll find coffeescript pretty straight forward:
 
-* [Coffeescript](http://coffeescript.org/'>http://coffeescript.org/)
+> [Coffeescript](http://coffeescript.org/'>http://coffeescript.org/)
 
 Coffeescript encourages an uncommon, but very powerful style of programming.  It's called Functional Programming.  You'll find a lot of academic definitions for FP, but basically it gives you really powerful tools for dealing with collections of things and maps of things (key-value pairs).
 
