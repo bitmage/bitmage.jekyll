@@ -372,6 +372,7 @@ div.title {
   position: absolute;
   left: 715px;
   top: 200px;
+  width: 240px;
 }
 pre.ascii {
   color: #25D500;
