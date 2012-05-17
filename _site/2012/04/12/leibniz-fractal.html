@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Personify Monads</title>
+    <title>Leibniz Fractal</title>
     
     <meta name="author" content="Brandon Mason">
     <link href="/style/bootstrap.css" rel="stylesheet">
@@ -118,13 +118,23 @@
     <div class="container">
 
       <div class="content">
-        <p>Personify leverages monad constructor agents at build time. When utilized in this fashion, generic tests can be written within the constructor agent which verify that the functions you provide satisfy the monadic contract.</p>
+        <p>So you may be wondering what those rotating circles at the top of the page represent. They come from a thought experiment proposed by the philosopher Gottfried Leibniz in the 17th century:</p>
 
-<p>This is a realistic case where a third party library can inject unit tests into your application. Enforcing the monadic contract means that the encapsulated state will maintain uniform type throughout the application&#8217;s life.</p>
+<blockquote>
+<p>Leibniz told to his friend and correspondent Des Bosses to imagine a circle, then to inscribe within it three congruent circles with maximum radius; the latter smaller circles could be filled with three even smaller circles by the same procedure. This process can be continued infinitely, from which arises a good idea of self-similarity.</p>
+</blockquote>
 
-<p>Thus, a compile time type safety is introduced which is beyond the capabilities of &#8216;types&#8217; in the object oriented sense. OOP ensures type consistency across all data, leading to rigidity which is unnecessary and often undesirable. In contrast, a monadic contract is applied only to the functions that mutate application state. Since the mutators are pure in regards to the encapsulated data, the data&#8217;s consistency is mathematically provable through &#8216;abstract nonsense&#8217; as category mathematicians are apt to call it.</p>
+<p>If you search google for <code>Leibniz circle packing</code> you&#8217;ll come up with a similar picture:</p>
 
-<p>One thought I have is to use monads to model the patterns described in &#8220;Model Driven Design Using Business Patterns&#8221;.</p>
+<p>http://en.wikipedia.org/wiki/File:Apollonian_gasket.svg</p>
+
+<p>This is the &#8216;Apollonian gasket&#8217;, or &#8216;Leibniz Packing&#8217;. Packing the space between the circles is a more complex problem though, and is not as interesting to animate, so I decided to stick with a simple recursive circle filling algorithm. The graphic is drawn and animated with Paper.js, and while I&#8217;m not completely satisfied with the performance, I suppose it&#8217;ll do for now. :-)</p>
+
+<p>So why should we care about Leibniz? Well, recently I&#8217;ve been talking with the @wearefractal team about using Monads to pull certain side effects out of application space. The idea is that this would reduce complexity and make it easier to ensure the consistency of the application&#8217;s state over time. So we&#8217;ve been trying to wrap our heads around Monads.</p>
+
+<p>Leibniz is a pretty interesting guy, because (among many other things) he layed the groundwork for the philosophy of Monads. In philosophy, a Monad is an actor, a mover, a causer. It transforms particles - the state of the universe - by means of a set of laws or principles. So life is a sort of Monad. The laws of physics can be described in terms of Monads. God, the fundamental mover, is a Monad.</p>
+
+<p>Well, that&#8217;s cool, it sounds like being able to model these things in software would afford us a lot of descriptive power. But how do you get from such an abstract concept to a concrete implimentation? Fortunately for us, math provides a bridge - Category Theory. Now Category Theory seems to me like good reading material for an acid trip. But the key concept that I get is that we can extract common behaviors from similar Types into a Category. This is sort of like inheritance in an object oriented paradigm, but it works quite differently. Instead of having a strictly enforced format for the data, you work through defining transformations. The transformations that you provide must adhere to a monadic contract, which ensures that the data maintains a consistent Type.</p>
       </div>
 
       <footer>

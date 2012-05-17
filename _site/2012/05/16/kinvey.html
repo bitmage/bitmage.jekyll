@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Personify Monads</title>
+    <title>Kinvey</title>
     
     <meta name="author" content="Brandon Mason">
     <link href="/style/bootstrap.css" rel="stylesheet">
@@ -118,13 +118,23 @@
     <div class="container">
 
       <div class="content">
-        <p>Personify leverages monad constructor agents at build time. When utilized in this fashion, generic tests can be written within the constructor agent which verify that the functions you provide satisfy the monadic contract.</p>
+        <p>So&#8230; not to dog on what Kinvey is doing, because it&#8217;s useful in a certain context, but I&#8217;d like to differentiate between that and the approach that we&#8217;re taking.</p>
 
-<p>This is a realistic case where a third party library can inject unit tests into your application. Enforcing the monadic contract means that the encapsulated state will maintain uniform type throughout the application&#8217;s life.</p>
+<p>Kinvey is essentially making the assumption that the server is just a dumb data store - that all it needs to do is keep track of the state of things. There&#8217;s another startup here in Phoenix that some guys I used to work with at Terralever are doing that also takes the same approach. They&#8217;re calling it Deployd. They&#8217;re not identical, but they seem to be assuming the same role.</p>
 
-<p>Thus, a compile time type safety is introduced which is beyond the capabilities of &#8216;types&#8217; in the object oriented sense. OOP ensures type consistency across all data, leading to rigidity which is unnecessary and often undesirable. In contrast, a monadic contract is applied only to the functions that mutate application state. Since the mutators are pure in regards to the encapsulated data, the data&#8217;s consistency is mathematically provable through &#8216;abstract nonsense&#8217; as category mathematicians are apt to call it.</p>
+<p>In any case, Kinvey does allow some business rules to be saved on the server, but that&#8217;s really not their focus. They want the smarts to be on the client side. Because of that, it&#8217;s going to be difficult (or impossible) to build a system that has complex business rules. And business rules NEED to be on the server - it&#8217;s the only way you can guarantee that they are enforced. Anything client side cannot be trusted - a malicious user could modify how it works and you&#8217;d have no knowledge.</p>
 
-<p>One thought I have is to use monads to model the patterns described in &#8220;Model Driven Design Using Business Patterns&#8221;.</p>
+<p>So, it&#8217;s interesting because there&#8217;s this weird polarization going on. We&#8217;ve had HTML served over HTTP as the web standard for years, and that&#8217;s a very server focused architecture. And people are complaining because the user experience is poor. And now there&#8217;s an uprising, and people love mobile apps and these fancy new HTML5 web apps because they&#8217;re finally getting their user experience back. And you&#8217;ve got developers responding to that demand, saying &#8220;Yes, truly the time of the client is nigh! Screw those uppity server guys!&#8221; You know, I read an article somewhere that mobile clients were rendering the web irrelevant&#8230; The author apparently didn&#8217;t realize that the circulatory and nervous systems of his baby ran through the web.</p>
+
+<p>There are things that legitimately belong on both sides. The code on the client should serve to create a workflow for the user. The code on the server should enforce business rules, oversee transactions, and authenticate with third party providers. If you take a myopic view for one side or the other, you&#8217;re going to be at a serious disadvantage in almost any problem space.</p>
+
+<p>What&#8217;s different about Personify? Our offering to a developer is different. We make no claims of simplifying your application architecture into a single space. We don&#8217;t do that because it&#8217;s wrong. So you have to think about the server and the client as separate entities, and you need to design separately for them. We give you the tools to do both sides though, and we give you the tools to communicate between them.</p>
+
+<p>To quote Albert Einstein:</p>
+
+<p>Make everything as simple as possible, but not simpler.</p>
+
+<p>Beware anyone and everyone that tells you you don&#8217;t have to think. They are your enemy.</p>
       </div>
 
       <footer>
